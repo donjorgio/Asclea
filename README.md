@@ -54,7 +54,7 @@ npx react-native run-ios  # or run-android
 [License information here]
 
 
-# MEDICUS - Systemarchitektur und Implementierungsplan
+# ASCLEA - Systemarchitektur und Implementierungsplan
 
 ## Systemkomponenten
 
@@ -124,7 +124,7 @@ npx react-native run-ios  # or run-android
 ## Dateien-Struktur
 
 ```
-medicus/
+asclea/
 ├── backend/
 │   ├── app/
 │   │   ├── api/
