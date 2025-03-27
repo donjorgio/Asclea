@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/data:/app/data
+      - ./backend/models:/app/models
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/asclea
+      - SECRET_KEY=development-secret-key
+    depends_on:
+      - db
+    networks:
+      - asclea-network
+
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=asclea
+    ports:
+      - "5432:5432"
+    networks:
+      - asclea-network
+
+  web:
+    build:
+      context: ./frontend/web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/web:/app
+    depends_on:
+      - backend
+    networks:
+      - asclea-network
+
+networks:
+  asclea-network:
+
+volumes:
+  postgres_data:

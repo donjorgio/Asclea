@@ -1,0 +1,17 @@
+fastapi==0.109.2
+uvicorn==0.27.1
+pydantic==2.6.1
+python-dotenv==1.0.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+langchain==0.1.9
+llama-cpp-python==0.2.56
+sentence-transformers==2.2.2
+faiss-cpu==1.7.4
+pymupdf==1.23.7
+beautifulsoup4==4.12.2
+requests==2.31.0
+pandas==2.2.0
+python-multipart==0.0.9
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
